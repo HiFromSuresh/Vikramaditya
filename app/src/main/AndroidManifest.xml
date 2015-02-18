@@ -20,6 +20,10 @@
             android:name=".BackgroundStory"
             android:label="@string/title_activity_background_story" >
         </activity>
+        <activity
+            android:name=".StoryDisplay"
+            android:label="@string/title_activity_story_display" >
+        </activity>
     </application>
 
 </manifest>

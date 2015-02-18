@@ -61,6 +61,8 @@ public class BackgroundStory extends ActionBarActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_background_story, container, false);
             return rootView;
+
+
         }
     }
 }

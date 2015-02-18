@@ -8,11 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
-    Button mBackgroundStoryButton;
+    Button mBackgroundStoryButton, mStoryButton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +22,17 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         //typecasting
         mBackgroundStoryButton = (Button) findViewById(R.id.button2);
+        mStoryButton1 = (Button) findViewById(R.id.button);
 
         //Opening background story
-        mBackgroundStoryButton.setOnClickListener(new View.OnClickListener() {
+        /*mBackgroundStoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent backgroundStoryIntent = new Intent(
                         getApplicationContext(), BackgroundStory.class);
                 startActivity(backgroundStoryIntent);
             }
-        });
+        });*/
     }
 
 
@@ -58,6 +60,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        Toast.makeText(getApplicationContext(),"Entered onClick method", Toast.LENGTH_LONG);
+        int i = (Integer)v.getTag();
+        Intent intentStory = new Intent(getApplicationContext(), StoryDisplay.class);
+        intentStory.putExtra("TAG", i);
+        startActivity(intentStory);
     }
 }
