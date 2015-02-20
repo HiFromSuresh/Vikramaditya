@@ -26,15 +26,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         mBackgroundStoryButton.setOnClickListener(this);
         mStoryButton1.setOnClickListener(this);
-        //Opening background story
-        /*mBackgroundStoryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent backgroundStoryIntent = new Intent(
-                        getApplicationContext(), BackgroundStory.class);
-                startActivity(backgroundStoryIntent);
-            }
-        });*/
+
     }
 
 
@@ -62,7 +54,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(getApplicationContext(),"Entered onClick method", Toast.LENGTH_LONG).show();
         int i = Integer.parseInt(v.getTag().toString());
         Intent intentStory = new Intent(getApplicationContext(), StoryDisplay.class);
         intentStory.putExtra("TAG", i);
