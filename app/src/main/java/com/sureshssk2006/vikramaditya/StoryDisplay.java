@@ -17,8 +17,10 @@ public class StoryDisplay extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_display);
 
+        mTextViewStory = (TextView) findViewById(R.id.tag_no);
         Intent intent = getIntent();
-        mTextViewStory.setText(intent.getIntExtra("TAG", 0));
+        int ButtonNo = intent.getIntExtra("TAG", 0);
+        mTextViewStory.setText("" + ButtonNo);
     }
 
 
