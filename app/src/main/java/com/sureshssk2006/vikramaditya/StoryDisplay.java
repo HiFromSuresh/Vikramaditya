@@ -1,16 +1,23 @@
 package com.sureshssk2006.vikramaditya;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 
 public class StoryDisplay extends ActionBarActivity {
 
     TextView mTextViewStory;
+    String story;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +27,22 @@ public class StoryDisplay extends ActionBarActivity {
         mTextViewStory = (TextView) findViewById(R.id.tag_no);
         Intent intent = getIntent();
         int ButtonNo = intent.getIntExtra("TAG", 0);
-        mTextViewStory.setText("" + ButtonNo);
+        //mTextViewStory.setText("" + ButtonNo);
+
+        GetStory(ButtonNo);
+    }
+
+    private void GetStory(int buttonNo) {
+        String fileName = "" + Integer.toString(buttonNo) + ".txt";
+        AssetManager mAssetManager = getAssets();
+        try {
+            InputStream mInputStream = mAssetManager.open(fileName);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(mInputStream));
+            story = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mTextViewStory.setText(story);
     }
 
 
