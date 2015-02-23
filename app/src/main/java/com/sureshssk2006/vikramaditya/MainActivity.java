@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
+    //Declaration
     Button mBackgroundStoryButton, mStoryButton1;
 
     @Override
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         mBackgroundStoryButton = (Button) findViewById(R.id.button2);
         mStoryButton1 = (Button) findViewById(R.id.button);
 
+        //Setting the onClickListener
         mBackgroundStoryButton.setOnClickListener(this);
         mStoryButton1.setOnClickListener(this);
 
@@ -52,6 +54,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    //Opens the story view activity for all the butons
     @Override
     public void onClick(View v) {
         int i = Integer.parseInt(v.getTag().toString());

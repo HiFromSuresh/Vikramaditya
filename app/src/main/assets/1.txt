@@ -1,1 +1,4 @@
 This is the first story.
+Moral 1
+Moral 2
+Moral 3
